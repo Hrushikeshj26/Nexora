@@ -1,20 +1,48 @@
 @import "tailwindcss";
 
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(40px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeInSlow {
-  0% { opacity: 0; transform: scale(0.95); }
+@keyframes zoomIn {
+  0% { opacity: 0; transform: scale(0.85); }
   100% { opacity: 1; transform: scale(1); }
 }
 
-.animate-fadeIn {
-  animation: fadeIn 1.5s ease-out forwards;
+.animate-slideUp {
+  animation: slideUp 0.7s ease-out forwards;
 }
 
-.animate-fadeInSlow {
-  animation: fadeInSlow 1.5s ease-out forwards;
+.animate-zoomIn {
+  animation: zoomIn 0.9s ease-out forwards;
 }
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+
+
+:root {
+  /* --- Primary/Accent Colors (Tech Blue) --- */
+  --color-primary: #5b21b6;
+  --color-primary-hover: #6d28d9; 
+  
+  /* --- Secondary/Highlight Colors (Modern Purple) --- */
+  --color-secondary: #7c3aed;
+  
+  /* --- Neutral/Background Colors --- */
+  --color-bg-page: #f5f3ff;
+  --color-bg-card: #ede9fe;
+  --color-border: #8a78d1;
+
+  /* --- Text Colors --- */
+  --color-text-main: #1e1b4b; /* Main headings/content */
+  --color-text-subtle: #6C757D; /* Subtle text/descriptions */
+  
+  /* --- System/Feedback Colors --- */
+  --color-success: #28A745;
+  --color-danger: #DC3545;
+}
+
