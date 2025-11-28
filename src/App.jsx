@@ -1,24 +1,26 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Footer from './components/Footer'
-import Hero from './components/Hero'
-import Navbar from './components/Navbar'
-import Discover from './components/Discover'
-import Product from './pages/Product'
-import ScrollToTop from './components/ScrollToTop'
-import Offers from './components/Offer'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Discover from "./components/Discover";
+import Offers from "./components/Offer";
+import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
+import Product from "./pages/Product";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Auth from "./pages/Auth";
+import Popular from "./components/Popular";
 
 function App() {
   return (
-    <div className="bg-violet-200 min-h-screen flex flex-col">
-      
+    <div className="min-h-screen flex flex-col bg-(--color-bg-page)">
       <Navbar />
-
-      {/* Main Content Wrapper */}
       <main className="grow flex justify-center">
-        <div className="w-full max-w-7xl px-4">
+        <div className="w-full max-w-7xl px-4 md:px-6">
           <ScrollToTop />
-
           <Routes>
             <Route
               path="/"
@@ -27,17 +29,23 @@ function App() {
                   <Hero />
                   <Discover />
                   <Offers />
+                  <Popular />
                 </>
               }
             />
+
             <Route path="/product/:id" element={<Product />} />
+
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/user" element={<Auth />} />
+
           </Routes>
         </div>
       </main>
-
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
