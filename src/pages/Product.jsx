@@ -51,7 +51,6 @@ function Product() {
             <h1 className="text-4xl font-bold text-(--color-text-main)">
               {product.brand} {product.model}
             </h1>
-            <p className="text-gray-600 mt-2 tracking-wide">{product.category}</p>
           </div>
 
           {/* RATING */}
@@ -73,7 +72,7 @@ function Product() {
           </p>
 
           {/* SHORT INFO */}
-          <p className="text-gray-800 text-lg leading-relaxed">
+          <p className="text-(--color-text-subtle) text-lg leading-relaxed">
             {product.short_info}
           </p>
 
@@ -83,10 +82,10 @@ function Product() {
     <button
       key={color}
       onClick={() => setSelectedColor(color)}
-      className={`px-5 py-2 rounded-xl border ${
+      className={`px-5 py-2 rounded-full border ${
         selectedColor === color
-          ? "bg-violet-600 text-white"
-          : "bg-gray-100 text-black"
+          ? "border-4 border-(--color-primary)"
+          : "border-2 border-(--color-secondary)"
       }`}
     >
       {color}
@@ -97,7 +96,7 @@ function Product() {
 
           {/* SPECIFICATIONS */}
           <div>
-            <h2 className="text-xl font-semibold mb-4 text-black">
+            <h2 className="text-xl font-semibold mb-4 text-(--color-text-subtle)">
               Specifications:
             </h2>
 
@@ -105,37 +104,37 @@ function Product() {
               <ul className="space-y-3 text-gray-700 text-[15px]">
 
                 <li>
-                  <strong className="text-(--color-secondary)">Display:</strong>{" "}
+                  <strong className="text-(--color-text-main)">Display:</strong>{" "}
                   {product.specifications.display.description}
                 </li>
 
                 <li>
-                  <strong className="text-(--color-secondary)">Processor:</strong>{" "}
+                  <strong className="text-(--color-text-main)">Processor:</strong>{" "}
                   {product.specifications.processor}
                 </li>
 
                 <li>
-                  <strong className="text-(--color-secondary)">RAM / Storage:</strong>{" "}
+                  <strong className="text-(--color-text-main)">RAM / Storage:</strong>{" "}
                   {product.specifications.ram_storage}
                 </li>
 
                 <li>
-                  <strong className="text-(--color-secondary)">Rear Camera:</strong>{" "}
+                  <strong className="text-(--color-text-main)">Rear Camera:</strong>{" "}
                   {product.specifications.camera.rear}
                 </li>
 
                 <li>
-                  <strong className="text-(--color-secondary)">Front Camera:</strong>{" "}
+                  <strong className="text-(--color-text-main)">Front Camera:</strong>{" "}
                   {product.specifications.camera.front}
                 </li>
 
                 <li>
-                  <strong className="text-(--color-secondary)">Battery:</strong>{" "}
+                  <strong className="text-(--color-text-main)">Battery:</strong>{" "}
                   {product.specifications.battery}
                 </li>
 
                 <li>
-                  <strong className="text-(--color-secondary)">OS:</strong>{" "}
+                  <strong className="text-(--color-text-main)">OS:</strong>{" "}
                   {product.specifications.os}
                 </li>
 
@@ -163,8 +162,8 @@ function Product() {
           <div className="flex gap-8">
             <button className="mt-4 w-full lg:w-1/2 py-4 rounded-xl 
                              font-bold text-lg border-2
-                             border-(--color-secondary) hover:bg-(--color-primary-hover) 
-                             text-black hover:text-white shadow-md transition-all"
+                             border-(--color-border)
+                             text-black shadow-md transition-all hover:scale-95"
                              onClick={() => {
                                 if (!selectedColor) return toast.error("Please select a color!");
                                 addToCart({ ...product, selectedColor });
@@ -175,8 +174,7 @@ function Product() {
           </button>
           <button className="mt-4 w-full lg:w-1/2 py-4 rounded-xl 
                              font-bold text-lg
-                             bg-(--color-secondary) hover:bg-(--color-primary-hover) 
-                             text-white shadow-md transition-all"
+                             bg-(--color-text-main) border border-(--color-border) text-white shadow-md transition-all hover:scale-95"
                   onClick={() => {
                       if (!selectedColor) {
                         toast.error("Please select a color");
