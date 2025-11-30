@@ -25,24 +25,20 @@
 
 
 :root {
-  /* --- Primary/Accent Colors (Tech Blue) --- */
-  --color-primary: #5b21b6;
-  --color-primary-hover: #6d28d9; 
-  
-  /* --- Secondary/Highlight Colors (Modern Purple) --- */
-  --color-secondary: #7c3aed;
-  
-  /* --- Neutral/Background Colors --- */
-  --color-bg-page: #f5f3ff;
-  --color-bg-card: #ede9fe;
-  --color-border: #8a78d1;
 
-  /* --- Text Colors --- */
-  --color-text-main: #1e1b4b; /* Main headings/content */
-  --color-text-subtle: #6C757D; /* Subtle text/descriptions */
+  --color-primary: #0e8b6c;
+  --color-primary-hover: #12ba90; 
   
-  /* --- System/Feedback Colors --- */
-  --color-success: #28A745;
-  --color-danger: #DC3545;
+  --color-secondary: #45edc3;
+  
+  --color-bg-page: white;
+  --color-bg-card: #e8fdf7;
+  --color-border: #095d48;
+
+  --color-text-main: #032019;
+  --color-text-subtle: #052e24; 
+
 }
+
+
 
