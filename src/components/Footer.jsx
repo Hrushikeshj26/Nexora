@@ -12,7 +12,7 @@ export default function NexoraFooter() {
           <h2 className="text-3xl font-bold text-white mb-4 font-share tracking-wide">
             Nexora
           </h2>
-          <p className="text-sm text-violet-200 leading-relaxed">
+          <p className="text-sm text-gray-200 leading-relaxed">
             The future of smartphones, delivered to your hands.  
             Explore next-gen devices with powerful performance and stunning design.
           </p>
@@ -24,10 +24,10 @@ export default function NexoraFooter() {
             Shop
           </h3>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/smartphones" className="hover:text-white text-violet-200">Smartphones</Link></li>
-            <li><Link to="/accessories" className="hover:text-white text-violet-200">Accessories</Link></li>
-            <li><Link to="/offers" className="hover:text-white text-violet-200">Offers</Link></li>
-            <li><Link to="/new-launches" className="hover:text-white text-violet-200">New Launches</Link></li>
+            <li><Link to="/smartphones" className="hover:text-white text-gray-200">Smartphones</Link></li>
+            <li><Link to="/accessories" className="hover:text-white text-gray-200">Accessories</Link></li>
+            <li><Link to="/offers" className="hover:text-white text-gray-200">Offers</Link></li>
+            <li><Link to="/new-launches" className="hover:text-white text-gray-200">New Launches</Link></li>
           </ul>
         </div>
 
@@ -37,10 +37,10 @@ export default function NexoraFooter() {
             Support
           </h3>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/contact" className="hover:text-white text-violet-200">Contact Us</Link></li>
-            <li><Link to="/faq" className="hover:text-white text-violet-200">FAQs</Link></li>
-            <li><Link to="/service-center" className="hover:text-white text-violet-200">Service Centers</Link></li>
-            <li><Link to="/warranty" className="hover:text-white text-violet-200">Warranty Info</Link></li>
+            <li><Link to="/contact" className="hover:text-white text-gray-200">Contact Us</Link></li>
+            <li><Link to="/faq" className="hover:text-white text-gray-200">FAQs</Link></li>
+            <li><Link to="/service-center" className="hover:text-white text-gray-200">Service Centers</Link></li>
+            <li><Link to="/warranty" className="hover:text-white text-gray-200">Warranty Info</Link></li>
           </ul>
         </div>
 
@@ -50,16 +50,16 @@ export default function NexoraFooter() {
             Company
           </h3>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="hover:text-white text-violet-200">About Us</Link></li>
-            <li><Link to="/careers" className="hover:text-white text-violet-200">Careers</Link></li>
-            <li><Link to="/privacy" className="hover:text-white text-violet-200">Privacy Policy</Link></li>
-            <li><Link to="/terms" className="hover:text-white text-violet-200">Terms & Conditions</Link></li>
+            <li><Link to="/about" className="hover:text-white text-gray-200">About Us</Link></li>
+            <li><Link to="/careers" className="hover:text-white text-gray-200">Careers</Link></li>
+            <li><Link to="/privacy" className="hover:text-white text-gray-200">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-white text-gray-200">Terms & Conditions</Link></li>
           </ul>
         </div>
       </div>
 
       {/* BOTTOM SECTION */}
-      <div className="border-t border-violet-400/40 pt-6 flex flex-col md:flex-row md:items-center md:justify-between text-sm text-violet-300">
+      <div className="border-t border-(--color-border) pt-6 flex flex-col md:flex-row md:items-center md:justify-between text-sm text-gray-200">
 
         <p>
           © {new Date().getFullYear()} <span className="text-white font-semibold">Nexora</span>.  
@@ -77,7 +77,7 @@ export default function NexoraFooter() {
         </p>
 
         {/* SOCIALS */}
-        <div className="flex gap-4 mt-4 md:mt-0 text-violet-200">
+        <div className="flex gap-4 mt-4 md:mt-0">
           <a href="#" className="hover:text-white transition">Twitter</a>
           <a href="#" className="hover:text-white transition">Instagram</a>
           <a href="#" className="hover:text-white transition">LinkedIn</a>

@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { User, ShoppingCart, Menu, X } from "lucide-react";
+import { useCart } from "../context/CartContext";
+
 
 export default function NexoraNavbar() {
   const [open, setOpen] = useState(false);
+
+  const { cart } = useCart();
+
+// Total cart items
+const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
 
   return (
     <nav className="w-full bg-(--color-primary) text-white shadow-md sticky top-0 z-50">
@@ -69,14 +76,19 @@ export default function NexoraNavbar() {
               to="/user"
               className="hover:text-white text-violet-200 transition"
             >
-              <User size={22} />
+              <User size={24} />
             </Link>
 
             <Link
               to="/cart"
-              className="hover:text-white text-violet-200 transition"
+              className="hover:text-white text-violet-200 transition relative"
             >
-              <ShoppingCart size={22} />
+              <ShoppingCart size={24}/>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
         </div>
@@ -89,7 +101,7 @@ export default function NexoraNavbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden bg-violet-700/90 px-6 py-4 space-y-4 text-violet-100 border-t border-violet-400/40">
+        <div className="md:hidden px-6 py-4 space-y-4 border-t border-(--color-border)">
           <NavLink
             to="/"
             onClick={() => setOpen(false)}
@@ -115,21 +127,25 @@ export default function NexoraNavbar() {
           </NavLink>
 
           {/* Mobile Icons */}
-          <div className="flex items-center gap-6 pt-4 border-t border-violet-400/40">
+          <div className="flex items-center gap-6 pt-4 border-t border-(--color-border)">
             <Link
               to="/user"
               onClick={() => setOpen(false)}
               className="hover:text-white transition"
             >
-              <User size={22} />
+              <User size={23} />
             </Link>
 
             <Link
               to="/cart"
-              onClick={() => setOpen(false)}
-              className="hover:text-white transition"
+              className="hover:text-white text-violet-200 transition relative"
             >
-              <ShoppingCart size={22} />
+              <ShoppingCart size={24}/>
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
         </div>
