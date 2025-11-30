@@ -23,7 +23,7 @@ export const products = [
     "id": 2,
     "brand": "Apple",
     "model": "iPhone 15 Pro Max",
-    "img": "https://in.static.webuy.com/product_images/Phones/Phones%20iPhone/SAPPI15PM1TBLTUNLB_l.jpg",
+    "img": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQcBEnMLOwpTBTEQNk1SplCMySPvLXZd5IMCIBZV042pWEOgGJ3YH0LbzerpyyR0NZ8hZFaanRf__ALu3L5PokK28Un5-fgurk9YVdNnzWtJHQ_X5G4E7bk-g",
     "rating": 4.7,
     "price": 1199.00,
     "currency": "USD",
