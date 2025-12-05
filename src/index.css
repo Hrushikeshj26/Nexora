@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import "tailwindcss";
 
+.font-rubik {
+  font-family:  "Rubik", sans-serif;
+}
 
 @keyframes slideUp {
   0% { opacity: 0; transform: translateY(40px); }
