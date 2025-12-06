@@ -34,9 +34,9 @@ function Card() {
               <span className="font-medium">{item.model}</span>
             </h2>
 
-            {/* Rating */}
+            {/* Short info */}
             <div className="flex items-center gap-1">
-              <p className="line-clamp-3 text-gray-700">{item.short_info}</p>
+              <p className="line-clamp-3 text-gray-700 text-sm">{item.short_info}</p>
             </div>
 
             {/* Price */}
@@ -44,8 +44,8 @@ function Card() {
 
             {/* Button */}
             <button
-              className="mt-3 w-full py-2 rounded-lg border-2 border-(--color-border) 
-                         font-semibold text-black 
+              className="mt-3 w-full py-3 rounded-lg border border-(--color-border) 
+                         font-medium text-gray-700 text-sm
                          transition-all duration-300
                          group-hover:bg-(--color-primary-hover) group-hover:text-white"
             >
