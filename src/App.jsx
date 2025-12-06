@@ -21,10 +21,10 @@ import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-(--color-bg-page)">
-      <Toaster position="bottom-right" reverseOrder={false} 
+    <div className="min-h-screen flex flex-col bg-(--color-bg-page) font-rubik">
+      <Toaster position="top-right" reverseOrder={false} 
       containerStyle={{
-        bottom: 150,
+        top: 80,
       }}/>
       <Navbar />
       <main className="grow flex justify-center">
