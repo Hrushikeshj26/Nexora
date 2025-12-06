@@ -29,14 +29,14 @@ export default function Offers() {
   ];
 
   return (
-    <div className="w-full bg-(--color-secondary) shadow-sm rounded-2xl p-5 flex flex-col gap-4 text-white">
+    <div className="w-full bg-(--color-secondary) shadow-sm rounded-2xl p-5 flex flex-col gap-4">
       <h2 className="text-2xl font-bold">Available Offers</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {offers.map((offer) => (
           <div
             key={offer.id}
-            className="flex items-center gap-3 bg-(--color-bg-page) p-3 border-4 border-green-500 rounded-xl hover:shadow-md transition-all cursor-pointer text-black"
+            className="flex items-center gap-3 bg-(--color-bg-page) p-3 border-2 border-(--color-border) rounded-xl hover:shadow-md transition-all cursor-pointer text-black"
           >
             <div className="text-black">{offer.icon}</div>
             <div>
