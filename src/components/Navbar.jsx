@@ -25,13 +25,13 @@ const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
         </Link>
 
         {/* DESKTOP MENU */}
-        <div className="hidden md:flex items-center gap-10 text-[1rem] font-medium">
+        <div className="hidden md:flex items-center gap-10 text-[1rem] font-normal">
           <NavLink
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "text-white border-b-2"
-                : "text-violet-100 hover:text-white transition font-normal"
+                ? "text-white relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white"
+                : "text-gray-200 hover:text-white transition relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-400"
             }
           >
             Home
@@ -41,8 +41,8 @@ const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
             to="/products"
             className={({ isActive }) =>
               isActive
-                ? "text-white border-b-2"
-                : "text-violet-100 hover:text-white transition font-normal"
+                ? "text-white relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white"
+                : "text-gray-200 hover:text-white transition relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-400"
             }
           >
             All Products
@@ -52,8 +52,8 @@ const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
             to="/about"
             className={({ isActive }) =>
               isActive
-                ? "text-white border-b-2"
-                : "text-violet-100 hover:text-white transition font-normal"
+                ? "text-white relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white"
+                : "text-gray-200 hover:text-white transition relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-400"
             }
           >
             About
@@ -63,8 +63,8 @@ const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? "text-white border-b-2"
-                : "text-violet-100 hover:text-white transition font-normal"
+                ? "text-white relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-0.5 after:bg-white"
+                : "text-gray-200 hover:text-white transition relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-0.5 after:bg-white hover:after:w-full after:transition-all after:duration-400"
             }
           >
             Contact
@@ -74,14 +74,14 @@ const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
           <div className="flex items-center gap-6 ml-4">
             <Link
               to="/user"
-              className="hover:text-white text-violet-200 transition"
+              className="hover:text-white text-gray-200 transition"
             >
               <User size={24} />
             </Link>
 
             <Link
               to="/cart"
-              className="hover:text-white text-violet-200 transition relative"
+              className="hover:text-white text-gray-200 transition relative"
             >
               <ShoppingCart size={24}/>
               {cartCount > 0 && (
@@ -138,7 +138,7 @@ const cartCount = cart.reduce((acc, item) => acc + item.qty, 0);
 
             <Link
               to="/cart"
-              className="hover:text-white text-violet-200 transition relative"
+              className="hover:text-white text-gray-200 transition relative"
             >
               <ShoppingCart size={24}/>
               {cartCount > 0 && (

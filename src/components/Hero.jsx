@@ -2,7 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const slides = [
   { title: "OnePlus", model: "12 | R", image: "/images/Oneplus12.jpg" },
@@ -14,6 +15,14 @@ const slides = [
 function Hero() {
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [message, setMessage] = useState([]);
+
+  const showMessage = (item) => {
+    const msg = `${item.title} ${item.model}`;
+    setMessage([item.title, item.model])
+    toast.success(`Please select ${msg} from products if avilable, this is only a banner 😄`)
+  };
+  
 
   return (
     <Swiper
@@ -22,13 +31,13 @@ function Hero() {
       modules={[Autoplay, Pagination]}
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       loop={true}
-      className="w-full h-[80vh] my-10"
+      className="w-full h-[60vh] md:h-[80vh] my-30 md:my-10"
     >
       {slides.map((item, index) => (
         <SwiperSlide key={index}>
-          <div className="w-full h-full flex items-center justify-center gap-8 relative px-6">
+          <div className="w-full h-[70%] md:h-full flex  items-center justify-center gap-8 relative px-6">
 
-            <div className="max-w-7xl absolute w-full h-full flex items-center justify-between">
+            <div className="max-w-7xl absolute w-full h-full flex items-center justify-between md:top-0">
 
               {/* DESKTOP IMAGE */}
               <div className="hidden md:flex w-full h-full items-center justify-center">
@@ -40,13 +49,15 @@ function Hero() {
               </div>
 
               {/* TEXT */}
-              <div className="flex relative flex-col gap-3 z-20 w-full md:w-1/2 items-center text-(--color-text-main)">
+              <div className="flex relative md:top-0 top-50 flex-col gap-3 z-20 w-full md:w-1/2 items-center text-(--color-text-main)">
                 <h1 className={`text-4xl md:text-7xl font-bold uppercase ${activeIndex === index ? "animate-slideUp opacity-100" : "opacity-0"}`}>{item.title}
                 </h1>
 
-                <h2 className={`text-2xl md:text-4xl font-semibold uppercase ${activeIndex === index ? "animate-slideUp delay-150 opacity-100" : "opacity-0"}`}></h2>
+                <h2 className={`text-2xl md:text-4xl font-semibold uppercase ${activeIndex === index ? "animate-slideUp delay-150 opacity-100" : "opacity-0"}`}>{item.model}</h2>
 
-                <button className={`relative overflow-hidden border-2 border-(--color-border) px-6 py-2 text-lg md:text-xl uppercase font-semibold w-fit rounded-lg transition-all duration-300 before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:bg-(--color-secondary) before:-z-10 before:transition-all before:duration-300 hover:before:w-full hover:text-white ${activeIndex === index ? "animate-slideUp delay-300 opacity-100" : "opacity-0"}`}>Shop Now</button>
+                <button className={`relative overflow-hidden border-2 border-(--color-border) px-6 py-2 text-lg md:text-xl uppercase font-semibold w-fit rounded-lg transition-all duration-300 before:absolute before:left-0 before:top-0 before:h-full before:w-0 before:bg-(--color-secondary) before:-z-10 before:transition-all before:duration-300 hover:before:w-full ${activeIndex === index ? "animate-slideUp delay-300 opacity-100" : "opacity-0"}`}
+                onClick={() => showMessage(item)}
+                >Shop Now</button>
               </div>
             </div>
 
