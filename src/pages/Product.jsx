@@ -165,7 +165,10 @@ function Product() {
                              border-(--color-border)
                              text-black shadow-md transition-all hover:scale-95"
                              onClick={() => {
-                                if (!selectedColor) return toast.error("Please select a color!");
+                                if (!selectedColor) return toast.error("Please select a color!",{
+                                    style: {
+                                            padding: '16px',
+                                          },});
                                 addToCart({ ...product, selectedColor });
                                  navigate("/checkout");
                               }}
@@ -177,12 +180,18 @@ function Product() {
                              bg-(--color-text-main) border border-(--color-border) text-white shadow-md transition-all hover:scale-95"
                   onClick={() => {
                       if (!selectedColor) {
-                        toast.error("Please select a color");
+                        toast.error('Please select a color',{
+                          style: {
+                                  padding: '16px',
+                                },});
                         return;
                       }
 
                       addToCart({ ...product, selectedColor });
-                      toast.success("Added to cart!");
+                      toast.success("Added to cart!",{
+                          style: {
+                                  padding: '16px',
+                                },});
                     }}
           >
             Add to Cart

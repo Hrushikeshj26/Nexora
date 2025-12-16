@@ -18,6 +18,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 
 import { Toaster } from "react-hot-toast";
+import OrderConfirm from "./pages/OrderConfirm";
 
 function App() {
   return (
@@ -50,6 +51,8 @@ function App() {
             <Route path="/products" element={<AllProduct />}/>
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
+            <Route path="/orderconfirm" element={<OrderConfirm/>}/>
+
           </Routes>
         </div>
       </main>
